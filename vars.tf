@@ -12,5 +12,7 @@ variable "tags" {}
 variable "app_port" {}
 variable "listener_arn" {}
 variable "listener_priority" {}
-#variable "dns_name" {}
+variable "dns_name" {}
 variable "domain_name" {}
+variable "domain_id" {}
+variable "alb_dns_name" {}
