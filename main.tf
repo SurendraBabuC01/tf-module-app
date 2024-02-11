@@ -40,7 +40,7 @@ resource "aws_launch_template" "template" {
     name = aws_iam_instance_profile.instance_profile.name
   }
 
-  user_data = base64encode(templatefile("${path.module}/userdata.sh", {
+  userdata = base64encode(templatefile("${path.module}/userdata.sh", {
     env  = var.env
     name = var.name
   }))
