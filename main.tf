@@ -98,7 +98,7 @@ resource "aws_lb_listener_rule" "rule" {
   }
 
   condition {
-    path_pattern {
+    host_header {
       values = [local.alb_dns_name]
     }
   }
