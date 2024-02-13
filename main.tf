@@ -61,7 +61,7 @@ resource "aws_autoscaling_group" "asg" {
   }
 
   dynamic "tag" {
-    for_each = local.asg_tags
+    for_each = merge(local.asg_tags, { Monitor = "true" })
     content {
       key                 = tag.key
       propagate_at_launch = true
