@@ -92,10 +92,11 @@ resource "aws_autoscaling_policy" "asg-cpu-rule" {
 }
 
 resource "aws_lb_target_group" "main" {
-  name     = "${var.name}-${var.env}-tg"
-  port     = var.app_port
-  protocol = "HTTP"
-  vpc_id   = var.vpc_id
+  name                 = "${var.name}-${var.env}-tg"
+  port                 = var.app_port
+  protocol             = "HTTP"
+  vpc_id               = var.vpc_id
+  deregistration_delay = 30
 
   health_check {
     enabled             = true
